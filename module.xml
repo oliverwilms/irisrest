@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Export generator="Cache" version="25">
-  <Document name="rest-template.ZPM">
+  <Document name="irisrest.ZPM">
     <Module>
-      <Name>rest-template</Name>
+      <Name>irisrest</Name>
       <Version>1.0.5</Version>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
-      <Resource Name="Sample.PKG"/>
+      <Resource Name="App.PKG"/>
      
        <CSPApplication 
-        Url="/crud"
+        Url="/rest/task"
         Recurse="1"
-        Directory="{$cspdir}/crud" 
+        Directory="{$cspdir}" 
         MatchRoles=":{$dbrole}"
         PasswordAuthEnabled="1"
         UnauthenticatedEnabled="0"
-        DispatchClass="Sample.PersonREST"
+        DispatchClass="App.REST"
         ServeFiles="1"
-        CookiePath="/crud"
+        CookiePath="/rest/task"
         UseCookies="2"
        />
     </Module>
