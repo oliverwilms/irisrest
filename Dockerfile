@@ -23,7 +23,7 @@ RUN \
   set sc = ##class(App.Installer).setup() \
   zn "%SYS" \
   write "Create web application ..." \
-  set webName = "/rest/task" \
+  set webName = "/crud/task" \
   set webProperties("DispatchClass") = "App.REST" \
   set webProperties("NameSpace") = "IRISAPP" \
   set webProperties("Enabled") = 1 \

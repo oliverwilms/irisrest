@@ -1,6 +1,6 @@
 ## irisrest
 This is a REST API application in  ObjectScript using Docker container for InterSystems IRIS.
-The repository includes files which let you immedietly compile your ObjecScript files in InterSystems IRIS Community Edition in a docker container.
+The repository includes files which let you immediately compile your ObjecScript files in InterSystems IRIS Community Edition in a docker container.
 
 ## Prerequisites
 This needs to have git and docker installed.
@@ -16,12 +16,19 @@ $ git clone https://github.com/oliverwilms/irisrest.git
 Open the terminal in this directory and run:
 
 ```
+cd irisrest
 $ docker-compose build
 ```
 
 or install it with ZPM client:
 ```
 zpm:USER>install irisrest
+```
+
+Run the REST API application:
+
+```
+$ docker-compose up -d
 ```
 
 ## How to Work With it
@@ -33,19 +40,19 @@ I wanted to create an App to help me create my status report. I can create a new
 Even if there are no tasks stored yet, you can test the app with this request:
 
 ```
-localhost:52773/rest/task/test
+localhost:52773/crud/task/test
 ```
 
 To get all tasks in JSON call:
 
 ```
-localhost:52773/rest/task/all
+localhost:52773/crud/task/all
 ```
 
-To request the data for a particular record provide the id in GET request like 'localhost:52773/rest/task/id' . E.g.:
+To request the data for a particular record provide the id in GET request like 'localhost:52773/crud/task/id' . E.g.:
 
 ```
-localhost:52773/rest/task/1
+localhost:52773/crud/task/1
 ```
 
 This will return JSON data for the task with ID=1, something like that:
@@ -68,7 +75,7 @@ Create a POST request e.g. in Postman with raw data in JSON. e.g.
 
 Adjust the authorisation if needed - it is basic for container with default login and password for IRIS Community edition container
 
-and send the POST request to localhost:52773/rest/task/newtask
+and send the POST request to localhost:52773/crud/task/newtask
 
 This will create a record in Sample.Person class of IRIS.
 
@@ -83,7 +90,7 @@ E.g. we want to change the record with id=2. Prepare in Postman the JSON in raw 
 
 and send the put request to:
 ```
-localhost:52773/rest/task/2
+localhost:52773/crud/task/2
 ```
 
 # Testing DELETE request
@@ -91,7 +98,7 @@ localhost:52773/rest/task/2
 For delete request this REST API expects only the id of the record to delete. E.g. if the id=2 the following DELETE call will delete the record:
 
 ```
-localhost:52773/rest/task/2
+localhost:52773/crud/task/2
 ```
 
 ## How to start coding
