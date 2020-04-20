@@ -9,7 +9,7 @@ XData UrlMap [ XMLNamespace = "http://www.intersystems.com/urlmap" ]
 {
 <Routes>
 <!-- Swagger specs -->
-<Route Url="/spec" Method="GET" Call="SwaggerSpec" />
+<Route Url="/_spec" Method="GET" Call="SwaggerSpec" />
 <!-- Tester method -->
 <Route Url="/test" Method="GET" Call="test"/>
 <!-- Get All Tasks -->

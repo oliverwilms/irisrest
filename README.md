@@ -35,6 +35,14 @@ $ docker-compose up -d
 
 I wanted to create an App to help me create my status report. I can create a new task, update an existing task, or delete a task. I can get information about a specific task or all tasks. These tasks are stored in persistent class App.Task.
 
+## Swagger Specs
+
+Use /_spec to see the Swagger Specs for this REST API:
+
+```
+localhost:52773/crud/task/_spec
+```
+
 # Testing GET requests
 
 Even if there are no tasks stored yet, you can test the app with this request:
