@@ -115,6 +115,8 @@ localhost:52773/crud/task/2
 
 If you are not really satisfied entering tasks in JSON format in Postman, you can try http://localhost:52773/csp/task/App.FrontEnd.cls
 
+If you click on 'Test' button, it issues test request to REST api and displays a test message in JSON format. You may be asked to login the first time you access the REST api. Please use browser back button to go back.
+
 # Dockerfile
 
 The simplest dockerfile to start IRIS and load ObjectScript from /src/cls folder

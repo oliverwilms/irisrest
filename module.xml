@@ -11,12 +11,10 @@
        <CSPApplication 
         Url="/crud/task"
         Recurse="1"
-        Directory="{$cspdir}" 
         MatchRoles=":{$dbrole}"
         PasswordAuthEnabled="1"
         UnauthenticatedEnabled="0"
         DispatchClass="App.REST"
-        ServeFiles="1"
         CookiePath="/crud/task"
         UseCookies="2"
        />
