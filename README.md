@@ -111,6 +111,10 @@ localhost:52773/crud/task/2
 
 ## What's insde the repo
 
+#FrontEnd Cache Server Page
+
+If you are not really satisfied entering tasks in JSON format in Postman, you can try http://localhost:52773/csp/task/App.FrontEnd.cls
+
 # Dockerfile
 
 The simplest dockerfile to start IRIS and load ObjectScript from /src/cls folder
