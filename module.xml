@@ -3,7 +3,7 @@
   <Document name="irisrest.ZPM">
     <Module>
       <Name>irisrest</Name>
-      <Version>1.1.1</Version>
+      <Version>1.2.1</Version>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
       <Resource Name="App.PKG"/>
@@ -22,7 +22,8 @@
        <CSPApplication 
         Url="/csp/task"
         Recurse="1"
-        Directory="{$cspdir}/task" 
+        DeployPath="{$cspdir}/task"
+        SourcePath="/web"
         MatchRoles=":{$dbrole}"
         PasswordAuthEnabled="1"
         UnauthenticatedEnabled="0"
