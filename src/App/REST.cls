@@ -29,9 +29,9 @@ XData UrlMap [ XMLNamespace = "http://www.intersystems.com/urlmap" ]
 ClassMethod test() As %Status
 {
 	Set task = {
-		"what": "doing something",
-		"when": "",
-		"who": ""
+		"What": "doing something",
+		"When": "",
+		"Who": "me"
 	}
 	Write task.%ToJSON()
 	Quit $$$OK
@@ -151,18 +151,20 @@ ClassMethod ValidateJSON(obj As %DynamicObject, Output error As %DynamicObject) 
 {
 	Set error = {}
 
-	If obj.%Get("what") = "" {
-		Set error.errormessage = "what is required"
+	If obj.%Get("What") = "" {
+		Set error.errormessage = "What is required"
 		Quit 0
 	}	
-
 	Quit 1
 }
 
 /// Helper method
 ClassMethod CopyToTaskFromJSON(ByRef task As App.Task, obj As %DynamicObject) [ Private ]
 {
-	Set task.What = obj.what
+#;	Set task.What = obj.What
+	Set val=obj.What if val'="" Set task.What = val
+	Set val=obj.Who  if val'="" Set task.Who  = val
+	Set val=$tr(obj.When,"TZ","  ") if task.WhenIsValid(val) set task.When=val
 }
 
 /// Helper method
@@ -181,7 +183,7 @@ ClassMethod SwaggerSpec() As %Status
 {
 	Set tSC = ##class(%REST.API).GetWebRESTApplication($NAMESPACE, %request.Application, .swagger)
 	Do swagger.info.%Remove("x-ISC_Namespace")
-	Set swagger.basePath = "/"
+	Set swagger.basePath = "/crud/task"
 	Set swagger.info.title = "Task REST App"
 	Set swagger.info.description = "IRIS REST Contest Entry"
 	Set swagger.info.version = "0.1"
