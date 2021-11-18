@@ -3,7 +3,7 @@
   <Document name="irisrest.ZPM">
     <Module>
       <Name>irisrest</Name>
-      <Version>1.2.2</Version>
+      <Version>1.2.3</Version>
       <Description>Iris Rest App for Tasks for Status Report</Description>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
